@@ -28,4 +28,10 @@ public class UserController {
     public List<Users> getUsers(){
         return service.getUsers() ;
     }
+
+    @PostMapping("/login")
+    public String login ( @RequestBody Users users ){
+//        System.out.println(users);
+        return service.verify(users) ;
+    }
 }
