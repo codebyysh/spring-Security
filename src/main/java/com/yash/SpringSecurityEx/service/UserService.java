@@ -42,7 +42,7 @@ public class UserService {
                 authenticate(new UsernamePasswordAuthenticationToken(users.getUsername(),users.getPassword()) );
 
         if (authentication.isAuthenticated()){
-            return jwtService.generateToken() ;
+            return jwtService.generateToken(users.getUsername()) ;
         }
         return "failure" ;
     }
